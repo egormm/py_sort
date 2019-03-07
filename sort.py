@@ -1,4 +1,5 @@
 from timeit import default_timer as timer
+import csv
 
 from bubble_sort import bubble_sort_r, bubble_sort_f
 from shuffle_sort import shuffle_sort
@@ -36,19 +37,31 @@ array_sort = [
 #     fout.close()
 #     fin.close()
 
-fout = open('output.txt', 'w')
-fout.write('algorithm\tsmall arr\tbig int\tsorted\tresorted\tbig arr\n')
-for func in array_sort:
-    print(func.__name__)
-    fin = open('input.txt', 'r')
-    n = int(fin.readline())
-    time_arr = []
-    for i in range(n):
-        cur_arr = list(map(int, fin.readline().split(" ")))
-        start_time = timer()
-        sorted_arr = func(cur_arr)
-        delta_time = timer() - start_time
-        time_arr += [delta_time]
-    fout.write(func.__name__+'{:10f}{:10f}{:10f}{:10f}{:10f}\n'.format(*time_arr))
-    fin.close()
-fout.close()
+# fout = open('output.csv', 'w')
+# fout.write('algorithm\tsmall arr\tbig int\tsorted\tresorted\tbig arr\n')
+# for func in array_sort:
+#     with open('input.txt', 'r') as fin:
+#         n = int(fin.readline())
+#         time_arr = []
+#         for i in range(n):
+#             cur_arr = list(map(int, fin.readline().split(" ")))
+#             start_time = timer()
+#             sorted_arr = func(cur_arr)
+#             delta_time = timer() - start_time
+#             time_arr += [delta_time]
+#         fout.write(func.__name__+'{:10f}{:10f}{:10f}{:10f}{:10f}\n'.format(*time_arr))
+# fout.close()
+
+with open("output.csv", 'w') as fout:
+    writer = csv.writer(fout, delimiter=',', quoting=csv.QUOTE_MINIMAL)
+    writer.writerow(['algorithm', 'small arr', 'big int', 'sorted', 'resorted', 'big arr'])
+    with open('input.txt', 'r') as fin:
+        [n], *arrays = list(map(lambda x: list(map(int, x.strip('\n').split(' '))), fin.readlines()))
+    for func in array_sort:
+        time_arr = []
+        for i in range(n):
+            start_time = timer()
+            sorted_arr = func(arrays[i])
+            delta_time = round(timer() - start_time, 10)
+            time_arr += [delta_time]
+        writer.writerow([func.__name__]+time_arr)
