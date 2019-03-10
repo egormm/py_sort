@@ -7,6 +7,7 @@ from selection_sort import selection_sort
 from insertion_sort import insertion_sort
 from counting_sort import counting_sort_r, counting_sort_o, counting_sort_s
 from heap_sort import heap_sort
+from radix_sort import radix_sort
 
 array_sort = [
     bubble_sort_r,
@@ -17,7 +18,8 @@ array_sort = [
     counting_sort_o,
     counting_sort_r,
     counting_sort_s,
-    heap_sort
+    heap_sort,
+    radix_sort
 ]
 
 # for func in array_sort:
@@ -64,4 +66,4 @@ with open("output.csv", 'w') as fout:
             sorted_arr = func(arrays[i])
             delta_time = round(timer() - start_time, 10)
             time_arr += [delta_time]
-        writer.writerow([func.__name__]+time_arr)
+        writer.writerow([func.__name__] + time_arr)

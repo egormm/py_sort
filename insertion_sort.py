@@ -1,5 +1,5 @@
-#add elements to sorted previous slice
 def insertion_sort(arr):
+    """add elements to sorted previous slice"""
     for i in range(1, len(arr)):
         cur_elem = arr[i]
         j = i - 1

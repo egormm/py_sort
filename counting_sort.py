@@ -1,5 +1,5 @@
-# stupid counting sort
 def counting_sort_s(arr):
+    """stupid counting sort"""
     ar_max = max(arr)
     ar_min = min(arr)
     count_arr = [0 for _ in range(ar_max - ar_min + 1)]
@@ -11,8 +11,8 @@ def counting_sort_s(arr):
     return arr
 
 
-# regular counting sort
 def counting_sort_r(arr):
+    """regular counting sort"""
     ar_max = max(arr)
     count_arr = [0 for _ in range(ar_max + 1)]
     res = [0] * len(arr)
@@ -26,8 +26,8 @@ def counting_sort_r(arr):
     return res
 
 
-# counting sort with small optimisation - count slice from min to max
 def counting_sort_o(arr):
+    """counting sort with small optimisation - count slice from min to max"""
     ar_min = min(arr)
     ar_max = max(arr)
     count_arr = [0] * (ar_max - ar_min + 1)

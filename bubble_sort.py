@@ -1,5 +1,5 @@
-# regular bubble sort
 def bubble_sort_r(arr):
+    """regular bubble sort"""
     for i in range(len(arr) - 1):
         for j in range(len(arr) - i - 1):
             if arr[j] > arr[j + 1]:
@@ -7,8 +7,8 @@ def bubble_sort_r(arr):
     return arr
 
 
-# bubble sort with flag
 def bubble_sort_f(arr):
+    """bubble sort with flag"""
     for i in range(len(arr) - 1):
         sorted_flag = False
         for j in range(len(arr) - i - 1):

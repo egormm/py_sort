@@ -1,5 +1,5 @@
-# push cur element up heap
 def max_heapify(arr, cur):
+    """push cur element up heap"""
     left = cur * 2 + 1
     right = cur * 2 + 2
     if left < len(arr) and arr[left] > arr[cur]:
@@ -14,8 +14,8 @@ def max_heapify(arr, cur):
     return arr
 
 
-# create max heap
 def build_heap(arr):
+    """create max heap"""
     for i in range(int(len(arr) / 2) - 1, -1, -1):
         arr = max_heapify(arr, i)
     return arr

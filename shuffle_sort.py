@@ -1,5 +1,11 @@
-#bidirectional bubble sort
 def shuffle_sort(arr):
+    """
+    Bidirectional bubble sort
+
+    :param arr: given int array
+    :return: sorted array
+    """
+
     for i in range(int(len(arr)/2)):
         sorted_flag = False
         for j in range(i, len(arr) - i - 1):
