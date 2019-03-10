@@ -6,12 +6,12 @@ class Number:
     Special class to iterate numerals in number
     """
 
-    def __init__(self, base, n):
+    def __init__(self, n, base):
         self._base = base
         self.n = n
 
     def __getitem__(self, key):
-        assert key > 0, "key > 0"
+        assert key >= 0, "key >= 0"
         return (self.n // self._base ** key) % self._base
 
 
@@ -46,10 +46,12 @@ def radix_sort(arr, base=10):
     :return: sorted array of int-s
     """
 
-    num_arr = [Number(base, n) for n in arr]
+    num_arr = [Number(n, base) for n in arr]
 
-    for cur in range(1, int(log(max(arr), base)) + 1):
-        counting_sort(num_arr, cur, base)
+    cur = 0
+    while base ** cur <= max(arr):
+        num_arr = counting_sort(num_arr, cur, base)
+        cur += 1
 
     for i in range(len(arr)):
         arr[i] = num_arr[i].n
