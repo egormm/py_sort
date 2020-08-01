@@ -24,37 +24,6 @@ array_sort = [
     quick_sort
 ]
 
-# for func in array_sort:
-#     fout = open(func.__name__ + '.txt', 'w')
-#     fin = open('input.txt', 'r')
-#     n = int(fin.readline())
-#     for i in range(n):
-#         cur_arr = list(map(int, fin.readline().split(" ")))
-#         fout.write(str(i + 1) + '. Original array:\n')
-#         fout.write(' '.join(map(str, cur_arr)) + '\n')
-#         fout.write('Sorted array:\n')
-#         start_time = timer()
-#         sorted_arr = func(cur_arr)
-#         delta_time = timer() - start_time
-#         fout.write(' '.join(map(str, sorted_arr)) + '\n')
-#         fout.write("Sorting time = " + '{:f3}'.format(delta_time*60000) + '\n\n')
-#     fout.close()
-#     fin.close()
-
-# fout = open('output.csv', 'w')
-# fout.write('algorithm\tsmall arr\tbig int\tsorted\tresorted\tbig arr\n')
-# for func in array_sort:
-#     with open('input.txt', 'r') as fin:
-#         n = int(fin.readline())
-#         time_arr = []
-#         for i in range(n):
-#             cur_arr = list(map(int, fin.readline().split(" ")))
-#             start_time = timer()
-#             sorted_arr = func(cur_arr)
-#             delta_time = timer() - start_time
-#             time_arr += [delta_time]
-#         fout.write(func.__name__+'{:10f}{:10f}{:10f}{:10f}{:10f}\n'.format(*time_arr))
-# fout.close()
 
 with open("output.csv", 'w') as fout:
     writer = csv.writer(fout, delimiter=',', quoting=csv.QUOTE_MINIMAL)
