@@ -1,14 +1,14 @@
 from timeit import default_timer as timer
 import csv
 
-from bubble_sort import bubble_sort_r, bubble_sort_f
-from shuffle_sort import shuffle_sort
-from selection_sort import selection_sort
-from insertion_sort import insertion_sort
-from counting_sort import counting_sort_r, counting_sort_o, counting_sort_s
-from heap_sort import heap_sort
-from radix_sort import radix_sort
-from quick_sort import quick_sort
+from sortings.bubble_sort import bubble_sort_r, bubble_sort_f
+from sortings.shuffle_sort import shuffle_sort
+from sortings.selection_sort import selection_sort
+from sortings.insertion_sort import insertion_sort
+from sortings.counting_sort import counting_sort_r, counting_sort_o, counting_sort_s
+from sortings.heap_sort import heap_sort
+from sortings.radix_sort import radix_sort
+from sortings.quick_sort import quick_sort
 
 array_sort = [
     bubble_sort_r,
@@ -25,10 +25,10 @@ array_sort = [
 ]
 
 def main():
-    with open("output.csv", 'w') as fout:
+    with open("../output.csv", 'w') as fout:
         writer = csv.writer(fout, delimiter=',', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(['algorithm', 'small arr', 'big int', 'sorted', 'resorted', 'big arr'])
-        with open('input.txt', 'r') as fin:
+        with open('../input.txt', 'r') as fin:
             [n], *arrays = list(map(lambda x: list(map(int, x.strip('\n').split(' '))), fin.readlines()))
         for func in array_sort:
             time_arr = []
