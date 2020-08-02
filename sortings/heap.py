@@ -1,3 +1,6 @@
+from typing import List
+
+
 def max_heapify(arr, cur):
     """push cur element up heap"""
     left = cur * 2 + 1
@@ -14,14 +17,14 @@ def max_heapify(arr, cur):
     return arr
 
 
-def build_heap(arr):
+def build_heap(arr: List[int]) -> List[int]:
     """create max heap"""
     for i in range(int(len(arr) / 2) - 1, -1, -1):
         arr = max_heapify(arr, i)
     return arr
 
 
-def heap_sort(arr):
+def heap_sort(arr: List[int]) -> List[int]:
     arr = build_heap(arr)
     cur_len = len(arr)
     for i in range(len(arr)):

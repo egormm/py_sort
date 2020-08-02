@@ -1,8 +1,9 @@
+from typing import List
 from random import choice
 
 
 # def decorator(function):
-#     def wrapper(arr):
+#     def wrapper(arr: List[int]) -> List[int]:
 #         function(arr, 0, len(arr)-1)
 #     def wrapper(arr, fst, lst):
 #         function(arr, fst, lst)
@@ -28,7 +29,7 @@ from random import choice
 #     return arr
 # TODO: find out speed of slices, if this way is faster, finish it
 
-def quick_sort(arr):
+def quick_sort(arr: List[int]) -> List[int]:
     if len(arr) <= 1:
         return arr
     else:

@@ -1,4 +1,7 @@
-def insertion_sort(arr):
+from typing import List
+
+
+def insertion_sort(arr: List[int]) -> List[int]:
     """add elements to sorted previous slice"""
     for i in range(1, len(arr)):
         cur_elem = arr[i]

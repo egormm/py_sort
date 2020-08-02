@@ -1,4 +1,7 @@
-def bubble_sort_r(arr):
+from typing import List
+
+
+def bubble_sort_r(arr: List[int]) -> List[int]:
     """regular bubble sort"""
     for i in range(len(arr) - 1):
         for j in range(len(arr) - i - 1):
@@ -7,7 +10,7 @@ def bubble_sort_r(arr):
     return arr
 
 
-def bubble_sort_f(arr):
+def bubble_sort_f(arr: List[int]) -> List[int]:
     """bubble sort with flag"""
     for i in range(len(arr) - 1):
         sorted_flag = False
