@@ -1,4 +1,7 @@
-def shuffle_sort(arr):
+from typing import List
+
+
+def shuffle_sort(arr: List[int]) -> List[int]:
     """
     Bidirectional bubble sort
 

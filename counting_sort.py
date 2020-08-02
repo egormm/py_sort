@@ -1,4 +1,7 @@
-def counting_sort_s(arr):
+from typing import List
+
+
+def counting_sort_s(arr: List[int]) -> List[int]:
     """stupid counting sort"""
     ar_max = max(arr)
     ar_min = min(arr)
@@ -11,7 +14,7 @@ def counting_sort_s(arr):
     return arr
 
 
-def counting_sort_r(arr):
+def counting_sort_r(arr: List[int]) -> List[int]:
     """regular counting sort"""
     ar_max = max(arr)
     count_arr = [0 for _ in range(ar_max + 1)]
@@ -26,7 +29,7 @@ def counting_sort_r(arr):
     return res
 
 
-def counting_sort_o(arr):
+def counting_sort_o(arr: List[int]) -> List[int]:
     """counting sort with small optimisation - count slice from min to max"""
     ar_min = min(arr)
     ar_max = max(arr)

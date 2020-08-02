@@ -1,4 +1,7 @@
-def selection_sort(arr):
+from typing import List
+
+
+def selection_sort(arr: List[int]) -> List[int]:
     """find min, put it in the begging"""
     for i in range(len(arr)-1):
         min_idx = i
