@@ -1,14 +1,14 @@
 from timeit import default_timer as timer
 import csv
 
-from sortings.bubble_sort import bubble_sort_r, bubble_sort_f
-from sortings.shuffle_sort import shuffle_sort
-from sortings.selection_sort import selection_sort
-from sortings.insertion_sort import insertion_sort
-from sortings.counting_sort import counting_sort_r, counting_sort_o, counting_sort_s
-from sortings.heap_sort import heap_sort
-from sortings.radix_sort import radix_sort
-from sortings.quick_sort import quick_sort
+from sortings.bubble import bubble_sort_r, bubble_sort_f
+from sortings.shuffle import shuffle_sort
+from sortings.selection import selection_sort
+from sortings.insertion import insertion_sort
+from sortings.counting import counting_sort_r, counting_sort_o, counting_sort_s
+from sortings.heap import heap_sort
+from sortings.radix import radix_sort
+from sortings.quick import quick_sort
 
 array_sort = [
     bubble_sort_r,
