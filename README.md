@@ -8,4 +8,7 @@ Small python3 practice with sort algorithms:
   - selection
   - shuffle
   
-And one sort_main.py file with couple different types of output
+Running app:
+`
+    python -m sortings
+`

@@ -45,5 +45,6 @@ def main():
                 time_arr += [delta_time]
             writer.writerow([func.__name__] + time_arr)
 
+
 if __name__ == '__main__':
     main()
