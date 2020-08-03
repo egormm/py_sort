@@ -9,7 +9,7 @@ def shuffle_sort(arr: List[int]) -> List[int]:
     :return: sorted array
     """
 
-    for i in range(int(len(arr)/2)):
+    for i in range(int(len(arr) / 2)):
         sorted_flag = False
         for j in range(i, len(arr) - i - 1):
             if arr[j] > arr[j + 1]:

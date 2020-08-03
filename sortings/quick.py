@@ -29,6 +29,7 @@ from random import choice
 #     return arr
 # TODO: find out speed of slices, if this way is faster, finish it
 
+
 def quick_sort(arr: List[int]) -> List[int]:
     if len(arr) <= 1:
         return arr
